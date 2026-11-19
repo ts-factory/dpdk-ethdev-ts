@@ -150,7 +150,8 @@ main(int argc, char *argv[])
                       n_rep);
         }
 
-        rpc_rte_eth_dev_get_name_by_port(iut_rpcs, rep_port_ids[0], rep_name);
+        rpc_rte_eth_dev_get_name_by_port(iut_rpcs, rep_port_ids[0],
+                                         rep_name, sizeof(rep_name));
         test_prepare_config_mk(&env, iut_rpcs, rep_name, rep_port_ids[0],
                                &ethdev_config_rep);
 

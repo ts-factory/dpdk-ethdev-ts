@@ -5697,7 +5697,8 @@ test_hotplug_reps(rcf_rpc_server *rpcs, tapi_env *env,
     {
         names[i] = tapi_calloc(1, RPC_RTE_ETH_NAME_MAX_LEN);
         rpc_rte_eth_dev_get_name_by_port(rpcs, rep_port_ids[i],
-                                         names[i]);
+                                         names[i],
+                                         RPC_RTE_ETH_NAME_MAX_LEN);
         test_prepare_config_mk(env, rpcs, names[i], rep_port_ids[i],
                                &(*reps)[i]);
     }
